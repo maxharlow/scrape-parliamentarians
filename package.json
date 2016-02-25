@@ -1,0 +1,12 @@
+{
+    "name": "scrape-members-and-lords",
+    "private": true,
+    "dependencies": {
+        "highland": "2.5.x",
+        "request": "2.67.x",
+        "csv-write-stream": "1.0.x"
+    },
+    "scripts": {
+        "start": "node members-and-lords"
+    }
+}
