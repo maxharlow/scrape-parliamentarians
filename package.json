@@ -1,12 +1,10 @@
 {
-    "name": "scrape-members-and-lords",
+    "name": "scrape-parliamentarians",
+    "type": "module",
     "private": true,
     "dependencies": {
-        "highland": "2.5.x",
-        "request": "2.67.x",
-        "csv-write-stream": "1.0.x"
-    },
-    "scripts": {
-        "start": "node members-and-lords"
+        "axios": "0.24.x",
+        "fs-extra": "10.0.x",
+        "scramjet": "4.36.x"
     }
 }
