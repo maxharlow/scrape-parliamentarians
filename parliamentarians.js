@@ -13,7 +13,7 @@ async function fetch(request) {
 
 async function pages() {
     const params = {
-        House: 1, // 1 is the Commons, 2 is the Lords
+        House: 1, // their *most recent* house, 1 is the Commons, 2 is the Lords
         IsCurrentMember: true
     }
     const response = await Axios({
@@ -42,7 +42,7 @@ function details(response) {
             party: item.value.latestParty.name,
             membership: item.value.latestHouseMembership.membershipFrom,
             membershipHouse: item.value.latestHouseMembership.house === 1 ? 'Commons' : item.value.latestHouseMembership.house === 2 ? 'Lords' : null,
-            membershipActive: item.value.latestHouseMembership.membershipStatus.statusIsActive,
+            membershipActive: item.value.latestHouseMembership.membershipStatus?.statusIsActive || false,
             membershipStartDate: item.value.latestHouseMembership.membershipStartDate,
             membershipEndDate: item.value.latestHouseMembership.membershipEndDate,
             membershipEndReason: item.value.latestHouseMembership.membershipEndReason,
